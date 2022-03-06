@@ -1,0 +1,26 @@
+object DM: TDM
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 210
+  Width = 325
+  object DataBasePrincipal: TIBDatabase
+    DefaultTransaction = TransPrincipal
+    ServerType = 'IBServer'
+    Left = 40
+    Top = 40
+  end
+  object TransPrincipal: TIBTransaction
+    DefaultDatabase = DataBasePrincipal
+    Left = 104
+    Top = 40
+  end
+  object IB_REDE: TIBDatabaseINI
+    Database = DataBasePrincipal
+    Username = 'SYSDBA'
+    Password = 'MasteR'
+    UseAppPath = ipoPathToServer
+    Section = 'Database Settings'
+    Left = 176
+    Top = 40
+  end
+end

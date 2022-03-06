@@ -1,0 +1,94 @@
+unit UDM;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, IBX.IBDatabase, Data.DB, IniFiles, Windows, Messages, Variants, Graphics, Controls, Forms,
+  VCL.Dialogs, ImgList, ActnList, Menus, ToolWin, ComCtrls, AppEvnts, jpeg, StdCtrls, ShellApi,
+  IBX.IBDatabaseINI;
+
+type
+  TDM = class(TDataModule)
+    DataBasePrincipal: TIBDatabase;
+    TransPrincipal: TIBTransaction;
+    IB_REDE: TIBDatabaseINI;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  DM: TDM;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure TDM.DataModuleCreate(Sender: TObject);
+var Arquivo : TIniFile;
+Opção : string;
+begin
+  //C:\SerieDelphi\SCI\DBSCI.FDB
+  try
+    try
+      {Verfica se tem a cópia do banco}
+      if FileExists(Pchar(ExtractFilePath(Application.ExeName)+'Banco_de_Dados_Salvo.FDB')) then
+        begin
+          {Deleta o Banco modificado}
+          DeleteFile(Pchar(ExtractFilePath(Application.ExeName)+'DBSCI.FDB'));
+
+          {Se ele não conseguiu apagar o banco de dados}
+          if FileExists(Pchar(ExtractFilePath(Application.ExeName)+'DBSCI.FDB')) then
+            Abort; // Chama o erro
+
+          {Renomeia o banco salvo e colocar como normal}
+          RenameFile(ExtractFilePath(Application.ExeName) + 'Banco_de_Dados_Salvo.FDB',
+            ExtractFilePath(Application.ExeName) + 'DBSCI.FDB');
+
+          Application.MessageBox('Banco Renomeado com susseso!','Configuração',
+          MB_OK+mb_DefButton2+MB_ICONEXCLAMATION);
+
+        {Coloca o arquivo em uma variável}
+        Arquivo := TIniFile.Create(ExtractFilePath(Application.ExeName)+'\Config.ini');
+
+        {Ler a seção, e se não ela não exitir coloca como '0'}
+        Opção := Arquivo.ReadString('Utilidades','SalvarBanco','0');
+
+        {Se a a variável for '1' ele coloca o check como true}
+        if Opção = '1' then
+          begin
+            {Grava como "0" para indicar que o banco voltou ao normal}
+            Arquivo.WriteString('Utilidades','SalvarBanco','0');
+          end;
+          Arquivo.Free;
+        end;
+    except
+      on E:Exception do
+        begin
+          if trim(E.Message) = 'Operation aborted' then
+            begin
+              MessageDlg('Erro ao a renomear banco de dados: O banco está aberto em outro programa.', mtError, [mbOK], 0);
+            end
+              else
+                MessageDlg('Erro ao a renomear banco de dados: '+E.Message, mtError, [mbOK], 0);
+        end;
+    end;
+
+    IB_REDE.FileName := ExtractFilePath(Application.ExeName) +'DB.INI';
+    DataBasePrincipal.DatabaseName := IB_REDE.DatabaseName;
+    DataBasePrincipal.Connected:=true;
+  except
+    on E:Exception do
+      begin
+        MessageDlg('Erro ao fazer a conexão com o Banco de Dados: '+E.Message, mtError, [mbOK], 0);
+        Application.Terminate;
+      end;
+  end;
+end;
+
+
+end.

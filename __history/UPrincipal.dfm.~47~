@@ -1,0 +1,282 @@
+object Frm_principal: TFrm_principal
+  Left = 0
+  Top = 0
+  Caption = 'Menu Principal'
+  ClientHeight = 332
+  ClientWidth = 725
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 24
+    Width = 706
+    Height = 249
+    DataSource = DM.ds_cadProd_produtos
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 527
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Cilque'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 639
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Imprimir'
+    TabOrder = 2
+  end
+  object frxReport1: TfrxReport
+    Tag = 1
+    Version = '6.6.15'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44551.391337638900000000
+    ReportOptions.LastChange = 44595.832742650460000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'procedure Picture1OnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      'end;'
+      ''
+      'procedure img_logoOnBeforePrint(Sender: TfrxComponent);'
+      'var'
+      '  arquivo: string;'
+      'begin'
+      '  arquivo := report.Variables['#39'path_logo'#39'];'
+      '  img_logo.Picture.LoadFromFile(arquivo);'
+      'end;'
+      ''
+      'begin'
+      ''
+      'end.')
+    OnReportPrint = 'frxReportOnReportPrint'
+    Left = 336
+    Top = 152
+    Datasets = <
+      item
+        DataSetName = 'DSCliente'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 6.500000000000000000
+      RightMargin = 6.500000000000000000
+      TopMargin = 6.500000000000000000
+      BottomMargin = 6.500000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object mDataPrincipal: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 589.606670240000000000
+        Top = 151.181200000000000000
+        Width = 744.567410000000000000
+        RowCount = 1
+        object DSClienteCF: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 434.645950000000000000
+          Top = 13.000000000000000000
+          Width = 309.921442910000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Identifica'#231#227'o.CidadeData]')
+          ParentFont = False
+        end
+        object Memo1: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 52.913420000000000000
+          Width = 744.567392910000000000
+          Height = 18.897640240000000000
+          DataSetName = 'DSCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Sr(a).:')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 72.149660000000000000
+          Width = 744.567392910000000000
+          Height = 18.897637800000000000
+          DataSetName = 'DSCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Cliente.Fantasia]')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 90.708720000000000000
+          Width = 744.567392910000000000
+          Height = 18.897637800000000000
+          DataSetName = 'DSCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Cliente.CPFCNPJ]')
+          ParentFont = False
+        end
+        object Memo4: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 109.606370000000000000
+          Width = 744.567392910000000000
+          Height = 18.897637800000000000
+          DataSetName = 'DSCliente'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[Cliente.Endere'#231'oCompleto]')
+          ParentFont = False
+        end
+      end
+      object InforComercio: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 70.677180000000000000
+        Top = 18.897650000000000000
+        Width = 744.567410000000000000
+        object img_logo: TfrxPictureView
+          AllowVectorExport = True
+          Left = 538.472790000000000000
+          Width = 204.094620000000000000
+          Height = 64.252010000000000000
+          OnBeforePrint = 'img_logoOnBeforePrint'
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo20: TfrxMemoView
+          AllowVectorExport = True
+          Top = 30.236240000000000000
+          Width = 536.693140390000000000
+          Height = 30.236240000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'CNPJ: [Emitente.CNPJ]')
+          ParentFont = False
+          VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end>
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Width = 536.693140390000000000
+          Height = 30.236240000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            
+              '[Emitente.XLgr], [Emitente.nro] - [Emitente.xBairro] [Emitente.C' +
+              'idade], [Emitente.UF]')
+          ParentFont = False
+          VAlign = vaCenter
+          Formats = <
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end
+            item
+            end>
+        end
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Top = 68.031540000000000000
+          Width = 744.567410000000000000
+          Color = clBlack
+          Frame.Style = fsDouble
+          Frame.Typ = [ftTop]
+        end
+      end
+    end
+  end
+end

@@ -1,0 +1,43 @@
+unit UPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids;
+
+type
+  TFrm_principal = class(TForm)
+    DBGrid1: TDBGrid;
+    Button1: TButton;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_principal: TFrm_principal;
+
+implementation
+
+{$R *.dfm}
+
+uses UDM;
+
+procedure TFrm_principal.Button1Click(Sender: TObject);
+begin
+  if DM.qry_cadProd_produtos.Active = True then
+    DM.qry_cadProd_produtos.Close;
+
+  DM.qry_cadProd_produtos.SQL.Clear;
+  DM.qry_cadProd_produtos.SQL.Add('SELECT * FROM PRODUTOS ORDER BY TITULO');
+  DM.qry_cadProd_produtos.Prepare;
+  DM.qry_cadProd_produtos.Open;
+
+end;
+
+end.

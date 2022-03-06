@@ -1,0 +1,1607 @@
+object Frm_principal: TFrm_principal
+  Left = 0
+  Top = 0
+  Caption = 'Menu Principal'
+  ClientHeight = 332
+  ClientWidth = 725
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGrid1: TDBGrid
+    Left = 8
+    Top = 24
+    Width = 706
+    Height = 249
+    DataSource = DM.ds_cadProd_produtos
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+  end
+  object Button1: TButton
+    Left = 527
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Cilque'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 639
+    Top = 288
+    Width = 75
+    Height = 25
+    Caption = 'Imprimir'
+    TabOrder = 2
+  end
+  object frxReport1: TfrxReport
+    Tag = 1
+    Version = '6.6.15'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44551.391337638900000000
+    ReportOptions.LastChange = 44579.834085370370000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'procedure Picture1OnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      'end;'
+      ''
+      'procedure img_logoOnBeforePrint(Sender: TfrxComponent);'
+      'var'
+      '  arquivo: string;'
+      'begin'
+      '  arquivo := report.Variables['#39'path_logo'#39'];'
+      '  img_logo.Picture.LoadFromFile(arquivo);'
+      'end;'
+      ''
+      'begin'
+      ''
+      'end.')
+    OnReportPrint = 'frxReportOnReportPrint'
+    Left = 336
+    Top = 152
+    Datasets = <
+      item
+        DataSetName = 'DSCaixaCredito'
+      end
+      item
+        DataSetName = 'DSCaixarDebito'
+      end
+      item
+        DataSetName = 'DSContBancoEntrada'
+      end
+      item
+        DataSetName = 'DSEntradasCReceber'
+      end
+      item
+        DataSetName = 'DSMovimentoVendas'
+      end
+      item
+        DataSetName = 'DSSaidasCPagar'
+      end
+      item
+        DataSetName = 'DSVendaPrazo'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 256
+      LeftMargin = 6.500000000000000000
+      RightMargin = 6.500000000000000000
+      TopMargin = 6.500000000000000000
+      BottomMargin = 6.500000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677170240000000000
+        Top = 899.528140000000000000
+        Width = 744.567410000000000000
+        object Page: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 7.559060000000000000
+          Width = 744.567410000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'P'#225'gina [Page]')
+          ParentFont = False
+        end
+      end
+      object HdCaixaCredito: TfrxHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897637800000000000
+        Top = 158.740260000000000000
+        Width = 744.567410000000000000
+        object Memo16: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 17.007874020000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          AllowVectorExport = True
+          Width = 408.189240000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Entradas Caixa')
+          ParentFont = False
+        end
+        object Memo3: TfrxMemoView
+          AllowVectorExport = True
+          Left = 408.189240000000000000
+          Width = 139.842610000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Dt. Entrada')
+          ParentFont = False
+        end
+        object Memo9: TfrxMemoView
+          AllowVectorExport = True
+          Left = 547.827150000000000000
+          Width = 49.133858270000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Cr'#233'd.')
+          ParentFont = False
+        end
+        object Memo10: TfrxMemoView
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Valor R$')
+          ParentFont = False
+        end
+      end
+      object mDataCaixaCredito: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 15.118110240000000000
+        Top = 200.315090000000000000
+        Width = 744.567410000000000000
+        DataSetName = 'DSCaixaCredito'
+        RowCount = 0
+        object memZebra: TfrxMemoView
+          AllowVectorExport = True
+          Top = 0.000000000000000014
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Width = 408.189120390000000000
+          Height = 15.118110240000000000
+          DataField = 'HISTORICO'
+          DataSetName = 'DSCaixaCredito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSCaixaCredito."HISTORICO"]')
+          ParentFont = False
+        end
+        object Memo11: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 408.189240000000000000
+          Width = 139.842527010000000000
+          Height = 15.118110240000000000
+          DataField = 'DATAMOVIMENTO'
+          DataSetName = 'DSCaixaCredito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSCaixaCredito."DATAMOVIMENTO"]')
+          ParentFont = False
+        end
+        object Memo12: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 547.653543310000000000
+          Width = 49.133770390000000000
+          Height = 15.118110240000000000
+          DataField = 'OPERACAO'
+          DataSetName = 'DSCaixaCredito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[DSCaixaCredito."OPERACAO"]')
+          ParentFont = False
+        end
+        object Memo13: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Width = 147.401550390000000000
+          Height = 15.118110240000000000
+          DataField = 'VALORMOVIMENTO'
+          DataSetName = 'DSCaixaCredito'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[DSCaixaCredito."VALORMOVIMENTO"]')
+          ParentFont = False
+        end
+      end
+      object InforComercio: TfrxReportTitle
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 78.236240000000000000
+        Top = 18.897650000000000000
+        Width = 744.567410000000000000
+        object Line1: TfrxLineView
+          AllowVectorExport = True
+          Top = 78.236240000000000000
+          Width = 744.567410000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+        object img_logo: TfrxPictureView
+          AllowVectorExport = True
+          Left = 5.559060000000000000
+          Width = 204.094620000000000000
+          Height = 64.252010000000000000
+          OnBeforePrint = 'img_logoOnBeforePrint'
+          Frame.Typ = []
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Date: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 532.535777000000000000
+          Top = 58.472480000000000000
+          Width = 211.653680000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Emiss'#227'o: [Date] [Time]')
+          ParentFont = False
+          Formats = <
+            item
+            end
+            item
+            end>
+        end
+        object Memo19: TfrxMemoView
+          Align = baCenter
+          AllowVectorExport = True
+          Left = 215.433210000000000000
+          Top = 13.322820000000000000
+          Width = 313.700990000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'MOVIMENTO ANAL'#205'TICO')
+          ParentFont = False
+        end
+        object Memo20: TfrxMemoView
+          AllowVectorExport = True
+          Left = 389.291590000000000000
+          Top = 37.795300000000000000
+          Width = 355.275820000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pTipoRelatorio]')
+          ParentFont = False
+        end
+      end
+      object ftCaixaCredito: TfrxFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677170240000000000
+        Top = 238.110390000000000000
+        Width = 744.567410000000000000
+        object Memo18: TfrxMemoView
+          AllowVectorExport = True
+          Top = 3.779530000000000000
+          Width = 744.567410000000000000
+          Height = 18.897640240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftTop, ftBottom]
+          ParentFont = False
+        end
+        object Memo17: TfrxMemoView
+          AllowVectorExport = True
+          Top = 5.535433070000000000
+          Width = 597.165740000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Total Movimento de Entradas no Caixa')
+          ParentFont = False
+        end
+        object COUNT: TfrxMemoView
+          IndexTag = 1
+          Align = baRight
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Top = 5.535433070000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<DSCaixaCredito."VALORMOVIMENTO">,mDataCaixaCredito)]')
+          ParentFont = False
+        end
+      end
+      object HdCaixaDebito: TfrxHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897637800000000000
+        Top = 283.464750000000000000
+        Width = 744.567410000000000000
+        object Memo14: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 17.007874020000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
+        end
+        object Memo15: TfrxMemoView
+          AllowVectorExport = True
+          Width = 408.189240000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Saidas Caixa')
+          ParentFont = False
+        end
+        object Memo21: TfrxMemoView
+          AllowVectorExport = True
+          Left = 408.189240000000000000
+          Width = 139.842610000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Dt. Entrada')
+          ParentFont = False
+        end
+        object Memo22: TfrxMemoView
+          AllowVectorExport = True
+          Left = 547.827150000000000000
+          Width = 49.133858270000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'D'#233'b.')
+          ParentFont = False
+        end
+        object Memo23: TfrxMemoView
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Valor R$')
+          ParentFont = False
+        end
+      end
+      object mDataCaixaDebito: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 15.118110240000000000
+        Top = 325.039580000000000000
+        Width = 744.567410000000000000
+        DataSetName = 'DSCaixarDebito'
+        RowCount = 0
+        object Memo24: TfrxMemoView
+          AllowVectorExport = True
+          Top = 0.000000000000000014
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo25: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Width = 408.189120390000000000
+          Height = 15.118110240000000000
+          DataField = 'HISTORICO'
+          DataSetName = 'DSCaixarDebito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSCaixarDebito."HISTORICO"]')
+          ParentFont = False
+        end
+        object Memo26: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 408.189240000000000000
+          Width = 139.842527010000000000
+          Height = 15.118110240000000000
+          DataField = 'DATAMOVIMENTO'
+          DataSetName = 'DSCaixarDebito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSCaixarDebito."DATAMOVIMENTO"]')
+          ParentFont = False
+        end
+        object Memo27: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 547.653543310000000000
+          Width = 49.133770390000000000
+          Height = 15.118110240000000000
+          DataField = 'OPERACAO'
+          DataSetName = 'DSCaixarDebito'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[DSCaixarDebito."OPERACAO"]')
+          ParentFont = False
+        end
+        object Memo28: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Width = 147.401550390000000000
+          Height = 15.118110240000000000
+          DataField = 'VALORMOVIMENTO'
+          DataSetName = 'DSCaixarDebito'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[DSCaixarDebito."VALORMOVIMENTO"]')
+          ParentFont = False
+        end
+      end
+      object ft_CaixaDebito: TfrxFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677170240000000000
+        Top = 362.834880000000000000
+        Width = 744.567410000000000000
+        object Memo29: TfrxMemoView
+          AllowVectorExport = True
+          Top = 3.779530000000000000
+          Width = 744.567410000000000000
+          Height = 18.897640240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftTop, ftBottom]
+          ParentFont = False
+        end
+        object Memo30: TfrxMemoView
+          AllowVectorExport = True
+          Top = 5.559060000000000000
+          Width = 597.165740000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Total Movimento de Saidas no Caixa')
+          ParentFont = False
+        end
+        object Memo31: TfrxMemoView
+          IndexTag = 1
+          Align = baRight
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Top = 5.559060000000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<DSCaixarDebito."VALORMOVIMENTO">,mDataCaixaDebito)]')
+          ParentFont = False
+        end
+      end
+      object HdEntradaCReceber: TfrxHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897637800000000000
+        Top = 408.189240000000000000
+        Width = 744.567410000000000000
+        object Memo45: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 17.007874020000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
+        end
+        object Memo46: TfrxMemoView
+          AllowVectorExport = True
+          Width = 404.409710000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Entradas Contas Receber')
+          ParentFont = False
+        end
+        object Memo47: TfrxMemoView
+          AllowVectorExport = True
+          Left = 503.323130000000000000
+          Width = 90.708720000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Dt. Entrada')
+          ParentFont = False
+        end
+        object Memo49: TfrxMemoView
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Width = 151.181200000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Valor R$')
+          ParentFont = False
+        end
+        object Memo58: TfrxMemoView
+          AllowVectorExport = True
+          Left = 405.055350000000000000
+          Width = 98.267780000000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Classe')
+          ParentFont = False
+        end
+      end
+      object mDataEntradaCReceber: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 15.118110240000000000
+        Top = 449.764070000000000000
+        Width = 744.567410000000000000
+        DataSetName = 'DSEntradasCReceber'
+        RowCount = 0
+        object Memo50: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo51: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Width = 404.409590390000000000
+          Height = 15.118110240000000000
+          DataField = 'HISTORICO'
+          DataSetName = 'DSEntradasCReceber'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSEntradasCReceber."HISTORICO"]')
+          ParentFont = False
+        end
+        object Memo52: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 503.323130000000000000
+          Width = 90.708637010000000000
+          Height = 15.118110240000000000
+          DataField = 'DATAVENCIMENTO'
+          DataSetName = 'DSEntradasCReceber'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSEntradasCReceber."DATAVENCIMENTO"]')
+          ParentFont = False
+        end
+        object Memo54: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataField = 'VALORPAGO'
+          DataSetName = 'DSEntradasCReceber'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[DSEntradasCReceber."VALORPAGO"]')
+          ParentFont = False
+        end
+        object Memo59: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 405.165354330000000000
+          Width = 98.267697010000000000
+          Height = 15.118110240000000000
+          Visible = False
+          DataField = 'CLASSECONTABIL'
+          DataSetName = 'DSEntradasCReceber'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSEntradasCReceber."CLASSECONTABIL"]')
+          ParentFont = False
+        end
+      end
+      object FtEntradaCReceber: TfrxFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677170240000000000
+        Top = 487.559370000000000000
+        Width = 744.567410000000000000
+        object Memo55: TfrxMemoView
+          AllowVectorExport = True
+          Top = 3.779530000000000000
+          Width = 744.567410000000000000
+          Height = 18.897640240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftTop, ftBottom]
+          ParentFont = False
+        end
+        object Memo56: TfrxMemoView
+          AllowVectorExport = True
+          Top = 5.559060000000000000
+          Width = 597.165740000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Total Movimento de Entradas no Contas Receber')
+          ParentFont = False
+        end
+        object Memo57: TfrxMemoView
+          IndexTag = 1
+          Align = baRight
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Top = 5.559060000000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<DSEntradasCReceber."VALORPAGO">,mDataEntradaCReceber)]')
+          ParentFont = False
+        end
+      end
+      object HdSaidasCPagar: TfrxHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897637800000000000
+        Top = 532.913730000000000000
+        Width = 744.567410000000000000
+        object Memo53: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 17.007874020000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
+        end
+        object Memo60: TfrxMemoView
+          AllowVectorExport = True
+          Width = 404.409710000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Saidas Contas Pagar')
+          ParentFont = False
+        end
+        object Memo61: TfrxMemoView
+          AllowVectorExport = True
+          Left = 503.323130000000000000
+          Width = 90.708720000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Dt. Entrada')
+          ParentFont = False
+        end
+        object Memo62: TfrxMemoView
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Width = 151.181200000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            'Valor R$')
+          ParentFont = False
+        end
+        object Memo63: TfrxMemoView
+          AllowVectorExport = True
+          Left = 405.055350000000000000
+          Width = 98.267780000000000000
+          Height = 15.118110240000000000
+          Visible = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Classe')
+          ParentFont = False
+        end
+      end
+      object mDataSaidasCPagar: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 15.118110240000000000
+        Top = 574.488560000000000000
+        Width = 744.567410000000000000
+        DataSetName = 'DSSaidasCPagar'
+        RowCount = 0
+        object Memo64: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo65: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Width = 404.409590390000000000
+          Height = 15.118110240000000000
+          DataField = 'HISTORICO'
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSSaidasCPagar."HISTORICO"]')
+          ParentFont = False
+        end
+        object Memo66: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 503.323130000000000000
+          Width = 90.708637010000000000
+          Height = 15.118110240000000000
+          DataField = 'DATAVENCIMENTO'
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSSaidasCPagar."DATAVENCIMENTO"]')
+          ParentFont = False
+        end
+        object Memo67: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataField = 'VALORPAGO'
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[DSSaidasCPagar."VALORPAGO"]')
+          ParentFont = False
+        end
+        object Memo68: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 405.165354330000000000
+          Width = 98.267697010000000000
+          Height = 15.118110240000000000
+          Visible = False
+          DataField = 'CLASSECONTABIL'
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[DSSaidasCPagar."CLASSECONTABIL"]')
+          ParentFont = False
+        end
+      end
+      object FtSaidasCPagar: TfrxFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 22.677170240000000000
+        Top = 612.283860000000000000
+        Width = 744.567410000000000000
+        object Memo69: TfrxMemoView
+          AllowVectorExport = True
+          Top = 3.779530000000000000
+          Width = 744.567410000000000000
+          Height = 18.897640240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = [ftTop, ftBottom]
+          ParentFont = False
+        end
+        object Memo70: TfrxMemoView
+          AllowVectorExport = True
+          Top = 5.559060000000000000
+          Width = 597.165740000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Total Movimento de Saidas Contas Pagar')
+          ParentFont = False
+        end
+        object Memo71: TfrxMemoView
+          IndexTag = 1
+          Align = baRight
+          AllowVectorExport = True
+          Left = 597.165740000000000000
+          Top = 5.559060000000000000
+          Width = 147.401670000000000000
+          Height = 15.118110240000000000
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[SUM(<DSSaidasCPagar."VALORPAGO">,mDataSaidasCPagar)]')
+          ParentFont = False
+        end
+      end
+      object HdResumo: TfrxHeader
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 18.897637800000000000
+        Top = 657.638220000000000000
+        Width = 744.567410000000000000
+        object Memo116: TfrxMemoView
+          AllowVectorExport = True
+          Width = 744.566929130000000000
+          Height = 17.007874020000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
+        end
+        object Memo117: TfrxMemoView
+          AllowVectorExport = True
+          Width = 404.409710000000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'RESUMO AN'#193'LISE')
+          ParentFont = False
+        end
+      end
+      object mDataResumo: TfrxMasterData
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 139.842600240000000000
+        Top = 699.213050000000000000
+        Width = 744.567410000000000000
+        RowCount = 1
+        object Memo121: TfrxMemoView
+          AllowVectorExport = True
+          Top = 1.000000000000000000
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo122: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Width = 404.409590390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'MOVIMENTO DE ENTRADAS NO CAIXA')
+          ParentFont = False
+        end
+        object Memo124: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pTotalEntradasCaixa]')
+          ParentFont = False
+        end
+        object Memo118: TfrxMemoView
+          AllowVectorExport = True
+          Top = 16.118120000000000000
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo119: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 15.118120000000000000
+          Width = 404.409590390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'MOVIMENTO DE SA'#205'DAS NO CAIXA')
+          ParentFont = False
+        end
+        object Memo120: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 15.118120000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pTotalSaidasCaixa]')
+          ParentFont = False
+        end
+        object Memo123: TfrxMemoView
+          AllowVectorExport = True
+          Top = 31.236240000000000000
+          Width = 744.566929130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop, ftBottom]
+          Fill.BackColor = clScrollBar
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo125: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Top = 30.236240000000000000
+          Width = 404.409590390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'SALDO CAIXA')
+          ParentFont = False
+        end
+        object Memo126: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 30.236240000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pSaldoCaixa]')
+          ParentFont = False
+        end
+        object Memo127: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 47.354360000000000000
+          Width = 721.889749130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo128: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 46.354360000000000000
+          Width = 381.732410390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'MOVIMENTO DE SA'#205'DAS NO CONTAS A PAGAR')
+          ParentFont = False
+        end
+        object Memo129: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 46.354360000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pSaidasContasPagar]')
+          ParentFont = False
+        end
+        object Memo130: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 62.252010000000000000
+          Width = 721.889749130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = []
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo131: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 61.252010000000000000
+          Width = 381.732410390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL DE VENDAS '#192' VISTA')
+          ParentFont = False
+        end
+        object Memo132: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 61.252010000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pSomaVendAvista]')
+          ParentFont = False
+        end
+        object Memo133: TfrxMemoView
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 77.590600000000000000
+          Width = 721.889749130000000000
+          Height = 15.118110240000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          Highlight.ApplyFont = False
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -13
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> mod 2 = 0'
+          Highlight.FillType = ftBrush
+          Highlight.Fill.BackColor = clSilver
+          Highlight.Frame.Typ = []
+          ParentFont = False
+        end
+        object Memo134: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 22.677180000000000000
+          Top = 76.590600000000000000
+          Width = 381.732410390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'TOTAL FUNDO DE CAIXA')
+          ParentFont = False
+        end
+        object Memo135: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 593.386210000000000000
+          Top = 76.590600000000000000
+          Width = 151.181080390000000000
+          Height = 15.118110240000000000
+          DataSetName = 'DSSaidasCPagar'
+          DisplayFormat.FormatStr = '%2.2n'
+          DisplayFormat.Kind = fkNumeric
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -12
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[pTotalFundoDeCaixa]')
+          ParentFont = False
+        end
+      end
+    end
+  end
+end
