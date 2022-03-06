@@ -24,7 +24,6 @@ type
     Label3: TLabel;
     Button5: TButton;
     ToolBar1: TToolBar;
-    Button6: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
